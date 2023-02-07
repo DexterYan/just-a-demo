@@ -15,7 +15,6 @@ args = argParser.parse_args()
 
 input = args.input
 stages_input = tools.split_to_stages(input)
-# print(stages_input)
 
 if len(stages_input) < 1:
     raise Exception("Please input right syntax")

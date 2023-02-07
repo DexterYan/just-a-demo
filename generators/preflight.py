@@ -9,7 +9,6 @@ from utils import tools
 def create_analyzers(support_yaml, input):
     synctaxAnalyzer = spacy.synctaxAnalyze(input)
     support_yaml, input_target = tools.init_sb_template(synctaxAnalyzer, input)
-    print(input_target)
 
     kubectl_cmd = chatgpt.create_kubectl_cmd(input_target)
 
@@ -37,7 +36,7 @@ def create_outcomes(support_yaml, input, prefix="", suffix=""):
 
     for key, values in outcomes_raw.items():
         if re.search(r"_not", key):
-            key = key.replace("_not", "")
+            key = re.sub(r"_not.*", "", key)
             operator = "!= "
             operator_text = "not "
         else:

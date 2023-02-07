@@ -41,7 +41,8 @@ def create_metrics_outcomes(support_yaml, input, metric_label, prefix="", suffix
     outcomes_raw_json = chatgpt.create_json(input)
 
     outcomes_raw = json.loads(outcomes_raw_json)
-    print(outcomes_raw)
+    print("========= openai generated json: =========")
+    print(outcomes_raw, "\n")
 
     for key, values in outcomes_raw.items():
         for v in values:
