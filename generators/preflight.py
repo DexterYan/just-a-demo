@@ -13,7 +13,9 @@ def create_analyzers(support_yaml, input):
 
     kubectl_cmd = chatgpt.create_kubectl_cmd(input_target)
 
-    print(kubectl_cmd)
+    print("========= openai generated kubectl cmd: =========")
+    print(kubectl_cmd, "\n")
+    
 
     if re.search(r"kubectl.+get.+pod", kubectl_cmd):
         pod_yaml = chatgpt.create_k8s_yaml(input_target, "pod")

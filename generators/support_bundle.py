@@ -11,7 +11,8 @@ def create_collectors(support_yaml, input):
 
     kubectl_cmd = chatgpt.create_kubectl_cmd(input)
     metric_labels = ""
-    print(kubectl_cmd)
+    print("========= openai generated kubectl cmd: =========")
+    print(kubectl_cmd, "\n")
 
     if re.search(r"kubectl.+logs", kubectl_cmd):
         svc_yaml = chatgpt.create_k8s_yaml(input, "service", "with port 80")
