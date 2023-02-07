@@ -1,0 +1,7 @@
+poetry run python main.py -i '"write a preflight yaml to check status from pod hello in app namespace; fail == [CrashLoopBackOff, Terminating], fail != [Healthy], success == [Ready], warning == [Good]"'
+
+poetry run python main.py -i 'write a support bundle yaml to get log from pod has api=app, app.kubernetes.io/name=service1 and kurl.io/app=hi labels in app namespace'
+
+poetry run python main.py -i 'write a support-bundle yaml to collect host memory'
+
+poetry run python main.py -i 'write a support bundle yaml to collect host cpu; fail: ["count < 2"], warn: ["count < 4"],  pass: ["count >= 4"]'
