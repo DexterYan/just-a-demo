@@ -1,0 +1,7 @@
+kind: SupportBundle
+spec:
+  collectors:
+    - logs:
+        selector:
+          - app=api
+        namespace: default
